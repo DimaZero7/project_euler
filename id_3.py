@@ -12,9 +12,7 @@ max_divisor = 0
 
 while number != 1:
     divisor = get_divisor(number=number)
-    if divisor > max_divisor:
-        max_divisor = divisor
-
+    max_divisor = max(divisor, max_divisor)
     number = int(number / divisor)
 
 print(max_divisor)
