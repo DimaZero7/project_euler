@@ -1,4 +1,5 @@
 # https://projecteuler.net/problem=8
+# python 3.10
 
 
 numbers = list("""

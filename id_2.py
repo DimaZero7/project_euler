@@ -1,4 +1,6 @@
 # https://projecteuler.net/problem=2
+# python 3.10
+
 
 numbers = [1, 2]
 

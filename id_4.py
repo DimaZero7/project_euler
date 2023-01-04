@@ -1,4 +1,5 @@
 # https://projecteuler.net/problem=4
+# python 3.10
 
 
 largest_three_digit_number = 999

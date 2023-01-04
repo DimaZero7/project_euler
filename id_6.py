@@ -1,4 +1,5 @@
 # https://projecteuler.net/problem=6
+# python 3.10
 
 
 minuend = 0

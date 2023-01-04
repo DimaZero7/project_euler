@@ -1,4 +1,6 @@
 # https://projecteuler.net/problem=1
+# python 3.10
+
 
 def sum_multiples(number: int, to: int):
     sum_numbers = 0

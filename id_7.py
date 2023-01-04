@@ -1,4 +1,6 @@
 # https://projecteuler.net/problem=7
+# python 3.10
+
 
 # This is 100% not the best solution, but I didn't want to cheat and paste someone else's code
 # He copes with a specific task in adequate time, and this is the main thing to solve the problem

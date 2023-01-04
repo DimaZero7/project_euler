@@ -1,4 +1,5 @@
 # https://projecteuler.net/problem=3
+# python 3.10
 
 
 def get_divisor(number: int):
