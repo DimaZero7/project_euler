@@ -3,9 +3,6 @@
 
 
 # This is 100% not the best solution, but I didn't want to cheat and paste someone else's code
-# He copes with a specific task in adequate time, and this is the main thing to solve the problem
-#   in an acceptable form, if this solution becomes unacceptable, you can always optimize
-
 
 index_desired_prime_number = 10_001
 # we skip the usual numbers 2, 3, 5, 7 for code simplicity
