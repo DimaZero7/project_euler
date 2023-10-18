@@ -1,6 +1,11 @@
 # https://projecteuler.net/problem=10
 # python 3.10
 
+import time
+
+
+start_time = time.time()
+
 limit = 2_000_000
 last_prime_number = 7
 prime_numbers = [2, 3, 5, last_prime_number]
@@ -26,3 +31,7 @@ while limit > last_prime_number:
         prime_numbers.append(last_prime_number)
 
 print(sum(prime_numbers))
+
+end_time = time.time()
+execution_time = end_time - start_time
+print("Execution time: {:.6f} seconds".format(execution_time))
