@@ -1,4 +1,4 @@
-# https://projecteuler.net/problem=13
+# https://projecteuler.net/problem=14
 # python 3.11
 
 import time
@@ -9,9 +9,12 @@ start_time = time.time()
 end_number = 1_000_000
 max_count = 0
 max_number = 0
-number = 14
+
 
 for number in range(1, end_number + 1):
+    if number - 1 % 3 == 0:
+        continue
+
     stop = False
     number_count = 1
     start_number = number
