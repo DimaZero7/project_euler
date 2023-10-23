@@ -11,10 +11,7 @@ max_count = 0
 max_number = 0
 
 
-for number in range(1, end_number + 1):
-    if number - 1 % 3 == 0:
-        continue
-
+for number in range(1, end_number + 1, 2):
     stop = False
     number_count = 1
     start_number = number
