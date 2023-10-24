@@ -1,5 +1,7 @@
 # https://projecteuler.net/problem=12
 # python 3.10
+from utils import performance_decorator
+
 
 # The decision is based on this article
 # https://zaochnik-com.com/spravochnik/matematika/delimost/nahozhdenie-vseh-delitelej-chisla/
@@ -29,34 +31,39 @@ def count_elements(elements: list) -> dict:
     return counts
 
 
-stop = False
+@performance_decorator
+def main():
+    stop = False
 
-last_number = 1
-sequence_sum = 1
+    last_number = 1
+    sequence_sum = 1
 
-while not stop:
-    last_number += 1
-    sequence_sum += last_number
+    while not stop:
+        last_number += 1
+        sequence_sum += last_number
 
-    decomposition_complete = False
+        decomposition_complete = False
 
-    divisible = sequence_sum
-    prime_divisors = []
+        divisible = sequence_sum
+        prime_divisors = []
 
-    while not decomposition_complete:
-        prime_divisor = get_prime_divisor(divisible)
+        while not decomposition_complete:
+            prime_divisor = get_prime_divisor(divisible)
 
-        prime_divisors.append(prime_divisor)
-        divisible /= prime_divisor
+            prime_divisors.append(prime_divisor)
+            divisible /= prime_divisor
 
-        if divisible == 1:
-            decomposition_complete = True
+            if divisible == 1:
+                decomposition_complete = True
 
-    divisor_count = 1
-    for i in count_elements(elements=prime_divisors).values():
-        divisor_count *= i + 1
+        divisor_count = 1
+        for i in count_elements(elements=prime_divisors).values():
+            divisor_count *= i + 1
 
-    if divisor_count > 500:
-        stop = True
+        if divisor_count > 500:
+            stop = True
 
-print(sequence_sum)
+    print(sequence_sum)
+
+
+main()

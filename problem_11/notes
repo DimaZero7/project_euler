@@ -1,0 +1,6 @@
+With the same hardware configuration
+All comparisons are relative to v1
+
+name |speed |percentage speed |memory usage |percentage speed |comment
+v1   |0.105 |100%             |0.008        |100%             | -
+v2   |0.115 |109%             |0.062        |775%             | easier to understand and easier to work with

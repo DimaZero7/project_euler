@@ -1,1 +1,6 @@
-v1 and v2 +- are equal in velocity but v2 is clearer
+With the same hardware configuration
+All comparisons are relative to v1
+
+name |speed |percentage speed |memory usage |percentage speed |comment
+v1   |2.000 |100%             |2.082        |100%             | -
+v2   |2.300 |115%             |2.448        |117%             | easier to understand
