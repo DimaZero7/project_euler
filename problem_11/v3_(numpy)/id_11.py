@@ -1,11 +1,15 @@
 # https://projecteuler.net/problem=11
 # python 3.10
+
+import numpy as np
+
 from utils import performance_decorator
+
 
 
 @performance_decorator
 def main():
-    values_list = [
+    array_1d = np.array([
         8, 2, 22, 97, 38, 15, 00, 40, 00, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8,  # 0 - 19
         49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 4, 56, 62, 00,  # 20 - 39
         81, 49, 31, 73, 55, 79, 14, 29, 93, 71, 40, 67, 53, 88, 30, 3, 49, 13, 36, 65,
@@ -26,10 +30,10 @@ def main():
         20, 69, 36, 41, 72, 30, 23, 88, 34, 62, 99, 69, 82, 67, 59, 85, 74, 4, 36, 16,
         20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54,
         1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48,
-    ]
+    ])
 
     elements_in_row = 20
-    count_rows: int = int(len(values_list) / elements_in_row)
+    count_rows: int = int(array_1d.shape[0] / elements_in_row)
 
     max_product = 0
 
@@ -43,23 +47,24 @@ def main():
             if element + 3 >= end_row:
                 horizontal_straight_product = 0
             else:
-                horizontal_straight_product = values_list[element] * values_list[element + 1] * values_list[element + 2] * values_list[element + 3]
+                horizontal_straight_product = array_1d[element] * array_1d[element + 1] * array_1d[element + 2] * array_1d[element + 3]
             # ___________________________________
 
             # Calculation of all vertical lines
             try:
-                vertical_straight_product = values_list[element] * values_list[element + elements_in_row] * values_list[element + elements_in_row * 2] * values_list[element + elements_in_row * 3]
+                vertical_straight_product = array_1d[element] * array_1d[element + elements_in_row] * array_1d[element + elements_in_row * 2] * array_1d[element + elements_in_row * 3]
             except:
                 vertical_straight_product = 0
             # ___________________________________
 
             # Calculation of all diagonals
             try:
-                diagonal_left_product = values_list[element] * values_list[element + elements_in_row - 1] * values_list[element + elements_in_row * 2 - 2] * values_list[element + elements_in_row * 3 - 3]
+                diagonal_left_product = array_1d[element] * array_1d[element + elements_in_row - 1] * array_1d[element + elements_in_row * 2 - 2] * array_1d[element + elements_in_row * 3 - 3]
             except:
                 diagonal_left_product = 0
+
             try:
-                diagonal_right_product = values_list[element] * values_list[element + elements_in_row + 1] * values_list[element + elements_in_row * 2 + 2] * values_list[element + elements_in_row * 3 + 3]
+                diagonal_right_product = array_1d[element] * array_1d[element + elements_in_row + 1] * array_1d[element + elements_in_row * 2 + 2] * array_1d[element + elements_in_row * 3 + 3]
             except:
                 diagonal_right_product = 0
             # ___________________________________
