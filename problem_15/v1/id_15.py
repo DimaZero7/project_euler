@@ -20,8 +20,6 @@ def calculate_options_for_rectangle(length: int, height: int, cache_cubes: dict)
             key = str(length_small_cube) + ';' + str(height_small_cube)
             if key in cache_cubes:
                 number_options += cache_cubes[key]
-            else:
-                print('1111111111111111')
 
         for height_entry_point in range(1, height_entry_points + 1):
             length_small_cube = length - 1
@@ -30,9 +28,6 @@ def calculate_options_for_rectangle(length: int, height: int, cache_cubes: dict)
             key = str(length_small_cube) + ';' + str(height_small_cube)
             if key in cache_cubes:
                 number_options += cache_cubes[key]
-            else:
-                print(key)
-                print('222222222222222222')
 
         cache_cubes[str(length) + ';' + str(height)] = number_options
         cache_cubes[str(height) + ';' + str(length)] = number_options
@@ -59,7 +54,11 @@ def main():
             if key in cache_cubes:
                 number_options += cache_cubes[key] * 2
             else:
-                calculate_options_for_rectangle(length=length_small_cube, height=height_small_cube, cache_cubes=cache_cubes)
+                calculate_options_for_rectangle(
+                    length=length_small_cube,
+                    height=height_small_cube,
+                    cache_cubes=cache_cubes
+                )
                 number_options += cache_cubes[key] * 2
 
         cache_cubes[str(length) + ';' + str(height)] = number_options
